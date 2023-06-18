@@ -1,0 +1,3 @@
+<div *ngFor="let meetup of meetupService.meetups">
+  <app-meetup-card [name]="meetup.name" [about]="meetup.about"></app-meetup-card>
+</div>
