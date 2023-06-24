@@ -9,6 +9,7 @@ import {AuthModule} from "./modules/auth/auth.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./modules/auth/services/auth.service";
 import {TokenInterceptor} from "./interceptors/token.interceptor";
+import {NavbarModule} from "./modules/navbar/navbar.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {TokenInterceptor} from "./interceptors/token.interceptor";
     MeetupBoardModule,
     FormsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    NavbarModule
   ],
   providers: [AuthService, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
