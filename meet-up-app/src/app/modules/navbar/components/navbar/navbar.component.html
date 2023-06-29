@@ -1,0 +1,29 @@
+<nav>
+  <ul>
+    <li *ngIf="!authService.user">
+      <a
+
+        routerLink="/login"
+        routerLinkActive="active-link"
+      >Войти</a
+      >
+    </li>
+    <li *ngIf="authService.user">
+      <a
+        routerLink="/meetups"
+        routerLinkActive="active-link"
+      >Meetups</a
+      >
+    </li>
+    <li *ngIf="this.isAdmin()">
+      <a
+        routerLink="/users-list"
+        routerLinkActive="active-link"
+      >Список пользователей</a
+      >
+    </li>
+    <button *ngIf="authService.user" (click)="authService.logout()">
+      Выйти
+    </button>
+  </ul>
+</nav>
