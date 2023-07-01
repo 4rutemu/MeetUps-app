@@ -6,11 +6,19 @@ import {MeetupBoardComponent} from "./modules/meetup-board/components/meetup-boa
 import {UsersListComponent} from "./modules/users-list/components/users-list/users-list.component";
 import {authGuard} from "./guards/auth.guard";
 import {isAdminGuard} from "./guards/is-admin.guard";
+import {MyMeetupsComponent} from "./modules/meetup-board/components/my-meetups/my-meetups.component";
+import {CreateMeetupComponent} from "./modules/meetup-board/components/create-meetup/create-meetup.component";
+import {EditMeetupComponent} from "./modules/meetup-board/components/edit-meetup/edit-meetup.component";
+import {EditUserComponent} from "./modules/users-list/components/edit-user/edit-user.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'meetups', component: MeetupBoardComponent, canActivate: [authGuard]},
+  {path: 'my-meetups', component: MyMeetupsComponent, canActivate: [authGuard]},
   {path: 'users-list', component: UsersListComponent, canActivate: [authGuard, isAdminGuard]},
+  {path: 'create-meetup', component: CreateMeetupComponent, canActivate: [authGuard]},
+  {path: 'edit-meetup', component: EditMeetupComponent, canActivate: [authGuard]},
+  {path: 'edit-user', component: EditUserComponent, canActivate: [authGuard, isAdminGuard]},
   {path: '', redirectTo: 'login', pathMatch: "full"}
 ];
 

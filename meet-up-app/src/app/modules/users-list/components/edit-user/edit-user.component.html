@@ -1,0 +1,14 @@
+<form [formGroup]="editForm" (submit)="editUser()">
+
+  <label for="email">email</label>
+  <input type="email" id="email" formControlName="email" />
+  <br /><br />
+
+  <label for="fio">fio</label>
+  <input type="text" id="fio" formControlName="fio" />
+  <br /><br />
+
+  <button (click)="deleteUser()">удалить</button>
+  <button type="submit">отправить</button>
+  <button (click)="cancelEditing()">отменить</button>
+</form>

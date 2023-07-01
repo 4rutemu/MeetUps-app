@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {tap} from "rxjs";
-import {environment} from "../../../environment"
+import {environment} from "../environment"
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private routes: Router) { }
 
-  login(email: string, password: string) {
+  login(email: any, password: any) {
     return this.http
       .post<any>(`${this.baseUrl}/login`, { email, password })
       .pipe(

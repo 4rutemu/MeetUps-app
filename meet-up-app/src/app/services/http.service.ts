@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../environment";
+import {environment} from "../environment";
 
 export const URLS = {
   MEETUP: '/meetup',
@@ -17,7 +17,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getData(destination: string) {
+  getData(destination: string): any {
     return this.http.get(`${BASE_URL}${destination}`)
   }
 

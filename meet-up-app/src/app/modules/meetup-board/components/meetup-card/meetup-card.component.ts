@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
+import {MeetupService} from "../../../../services/meetup.service";
 
-interface IMeetup {
+export interface IMeetup {
   "id": number,
   "name": string,
   "description": string,
@@ -34,6 +36,9 @@ interface IMeetup {
   styleUrls: ['./meetup-card.component.css']
 })
 export class MeetupCardComponent {
+
+  constructor(public routes: Router, public meetupService: MeetupService) {
+  }
 
   @Input()
   meetup?: IMeetup;

@@ -1,22 +1,37 @@
-import { Component } from '@angular/core';
-import {AuthService} from "../../services/auth.service";
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../../../../services/auth.service";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
-  email!: any;
-  password!: any;
+  loginForm!: FormGroup<{
+    email: FormControl<string | null>;
+    password: FormControl<string | null>
+  }>
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private fb: FormBuilder) {
   }
 
   login() {
-    this.authService.login(this.email, this.password)
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe((data) => console.log(data)) //TODO убрать лог
   }
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+  }
+
 
 }

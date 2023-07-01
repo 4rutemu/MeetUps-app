@@ -15,6 +15,13 @@
       >Meetups</a
       >
     </li>
+    <li *ngIf="authService.user">
+      <a
+        routerLink="/my-meetups"
+        routerLinkActive="active-link"
+      >My Meetups</a
+      >
+    </li>
     <li *ngIf="this.isAdmin()">
       <a
         routerLink="/users-list"
@@ -22,6 +29,11 @@
       >Список пользователей</a
       >
     </li>
+
+    <button *ngIf="authService.user" (click)="routes.navigate(['create-meetup'])">
+      Создать митап
+    </button>
+    <br>
     <button *ngIf="authService.user" (click)="authService.logout()">
       Выйти
     </button>
