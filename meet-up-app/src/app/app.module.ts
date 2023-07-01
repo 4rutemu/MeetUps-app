@@ -13,20 +13,22 @@ import {NavbarModule} from "./modules/navbar/navbar.module";
 import {UsersListModule} from "./modules/users-list/users-list.module";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MeetupBoardModule,
-    FormsModule,
-    AuthModule,
-    HttpClientModule,
-    NavbarModule,
-    UsersListModule
-  ],
-  providers: [AuthService, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MeetupBoardModule,
+        FormsModule,
+        AuthModule,
+        HttpClientModule,
+        NavbarModule,
+        UsersListModule
+    ],
+    providers: [AuthService, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
+    exports: [
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

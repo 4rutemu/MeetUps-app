@@ -9,6 +9,7 @@ import {HttpService} from "../../services/http.service";
 import { MyMeetupsComponent } from './components/my-meetups/my-meetups.component';
 import { CreateMeetupComponent } from './components/create-meetup/create-meetup.component';
 import { EditMeetupComponent } from './components/edit-meetup/edit-meetup.component';
+import { MeetupFilterPipe } from './pipes/meetup-filter.pipe';
 
 
 
@@ -18,7 +19,8 @@ import { EditMeetupComponent } from './components/edit-meetup/edit-meetup.compon
     MeetupCardComponent,
     MyMeetupsComponent,
     CreateMeetupComponent,
-    EditMeetupComponent
+    EditMeetupComponent,
+    MeetupFilterPipe
   ],
   exports: [
     MeetupBoardComponent
@@ -27,11 +29,12 @@ import { EditMeetupComponent } from './components/edit-meetup/edit-meetup.compon
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     MeetupService,
-    HttpService
+    HttpService,
+    MeetupFilterPipe
   ]
 })
 export class MeetupBoardModule { }

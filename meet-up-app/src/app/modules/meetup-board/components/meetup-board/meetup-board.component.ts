@@ -11,6 +11,7 @@ import {HttpService, URLS} from "../../../../services/http.service";
 export class MeetupBoardComponent implements OnInit{
 
   meetups: any;
+  searchText!: string;
 
   constructor(public meetupService: MeetupService, private httpService: HttpService) {
 
