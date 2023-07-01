@@ -13,6 +13,12 @@ export class AuthService {
 
   constructor(private http: HttpClient, private routes: Router) { }
 
+  register(email: any, password: any, fio: any) {
+    this.http
+      .post(`${this.baseUrl}/registration`, {email, password, fio});
+    this.routes.navigate(['login']);
+  }
+
   login(email: any, password: any) {
     return this.http
       .post<any>(`${this.baseUrl}/login`, { email, password })

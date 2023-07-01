@@ -4,12 +4,14 @@ import { LoginComponent } from './components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthService} from "../../services/auth.service";
+import { RegitrationComponent } from './components/regitration/regitration.component';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegitrationComponent
   ],
   imports: [
     CommonModule,

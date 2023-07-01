@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (submit)="login()">
+<form [formGroup]="registrationForm" (submit)="register()">
   <label for="email">email</label>
   <input type="email" id="email" formControlName="email" />
   <br/><br/>
@@ -7,6 +7,10 @@
   <input type="password" id="password" formControlName="password" />
   <br/><br/>
 
-  <button (click)="redirectToRegistration()">Зарегистрироваться</button>
+  <label for="fio">fio</label>
+  <input type="text" id="fio" formControlName="fio" />
+  <br/><br/>
+
+  <button (click)="redirectToLogin()">Войти</button>
   <button type="submit">отправить</button>
 </form>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../../../services/auth.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit{
     password: FormControl<string | null>
   }>
 
-  constructor(public authService: AuthService, private fb: FormBuilder) {
+  constructor(public authService: AuthService,
+              private fb: FormBuilder,
+              private routes: Router) {
   }
 
   login() {
@@ -33,5 +36,7 @@ export class LoginComponent implements OnInit{
     });
   }
 
-
+  redirectToRegistration() {
+    this.routes.navigate(['registration'])
+  }
 }
