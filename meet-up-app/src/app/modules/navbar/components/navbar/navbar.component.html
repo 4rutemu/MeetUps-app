@@ -1,13 +1,5 @@
 <nav>
   <ul>
-    <li *ngIf="!authService.user">
-      <a
-
-        routerLink="/login"
-        routerLinkActive="active-link"
-      >Войти</a
-      >
-    </li>
     <li *ngIf="authService.user">
       <a
         routerLink="/meetups"
