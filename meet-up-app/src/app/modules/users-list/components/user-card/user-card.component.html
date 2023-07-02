@@ -1,3 +1,13 @@
-<h3>{{user.fio}}</h3>
-<p>{{user.email}}</p>
-<button (click)="userService.editCard(user)">Изменить данные</button>
+<div class="container">
+  <div class="info-container">
+    <div>
+      <p>{{user.fio}}</p>
+    </div>
+    <div>
+      <p>{{user.email}}</p>
+    </div>
+    <div>
+      <img src="assets/images/edit.svg" alt="edit" (click)="userService.editCard(user)">
+    </div>
+  </div>
+</div>

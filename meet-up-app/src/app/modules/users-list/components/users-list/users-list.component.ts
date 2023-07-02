@@ -13,6 +13,6 @@ export class UsersListComponent implements OnInit{
   }
 
   ngOnInit() {
-    setTimeout(() => this.users = this.httpService.getData(URLS.USER), 1500)
+    setTimeout(() => this.users = this.httpService.getData(URLS.USER), 700)
   }
 }

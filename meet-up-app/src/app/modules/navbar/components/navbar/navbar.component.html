@@ -1,33 +1,31 @@
 <nav>
-  <ul>
-    <li *ngIf="authService.user">
-      <a
-        routerLink="/meetups"
-        routerLinkActive="active-link"
-      >Meetups</a
-      >
-    </li>
-    <li *ngIf="authService.user">
-      <a
-        routerLink="/my-meetups"
-        routerLinkActive="active-link"
-      >My Meetups</a
-      >
-    </li>
-    <li *ngIf="this.isAdmin()">
-      <a
-        routerLink="/users-list"
-        routerLinkActive="active-link"
-      >Список пользователей</a
-      >
-    </li>
+  <div class="logo-container">
+    <h1>MeetUps</h1>
+    <div class="logo-image-container">
+      <img src="assets/images/image%204.png" width="96px" height="15px">
+      <img src="assets/images/image%205.png">
+    </div>
+  </div>
 
-    <button *ngIf="authService.user" (click)="routes.navigate(['create-meetup'])">
-      Создать митап
-    </button>
-    <br>
-    <button *ngIf="authService.user" (click)="authService.logout()">
-      Выйти
-    </button>
-  </ul>
+  <div class="anchors-container">
+        <a *ngIf="authService.user"
+          routerLink="/meetups"
+          routerLinkActive="active-link"
+        >Meetups</a
+        >
+        <a *ngIf="authService.user"
+          routerLink="/my-meetups"
+          routerLinkActive="active-link"
+        >My Meetups</a
+        >
+        <a *ngIf="this.isAdmin()"
+          routerLink="/users-list"
+          routerLinkActive="active-link"
+        >Список пользователей</a
+        >
+  </div>
+
+  <div class="buttons-container">
+    <img src="assets/images/mdi_exit_to_app.svg" *ngIf="authService.user" (click)="authService.logout()">
+  </div>
 </nav>

@@ -1,5 +1,12 @@
-<input type="text" [(ngModel)]="searchText">
+<div class="container">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    class="search"
+    placeholder="Название, автор..."
+  >
 
-<div *ngFor="let meetup of meetups | async | meetupsFilter: searchText">
-  <app-meetup-card [meetup] = "meetup"></app-meetup-card>
+  <div *ngFor="let meetup of meetups | async | meetupsFilter: searchText">
+    <app-meetup-card [meetup] = "meetup"></app-meetup-card>
+  </div>
 </div>

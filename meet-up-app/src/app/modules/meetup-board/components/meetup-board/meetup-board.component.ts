@@ -18,6 +18,6 @@ export class MeetupBoardComponent implements OnInit{
   }
 
   ngOnInit() {
-    setTimeout(() => this.meetups = this.httpService.getData(URLS.MEETUP), 1500)
+    setTimeout(() => this.meetups = this.httpService.getData(URLS.MEETUP), 700)
   }
 }

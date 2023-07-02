@@ -1,12 +1,23 @@
-<form [formGroup]="loginForm" (submit)="login()">
-  <label for="email">email</label>
-  <input type="email" id="email" formControlName="email" />
-  <br/><br/>
+<div class="container">
+  <form [formGroup]="loginForm" (submit)="login()">
 
-  <label for="password">password</label>
-  <input type="password" id="password" formControlName="password" />
-  <br/><br/>
+    <input class="login-input"
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="email"
+    />
 
-  <button (click)="redirectToRegistration()">Зарегистрироваться</button>
-  <button type="submit">отправить</button>
-</form>
+    <input class="login-input"
+      type="password"
+      id="password"
+      formControlName="password"
+      placeholder="password"
+    />
+
+    <div class="login-button-container">
+      <button (click)="redirectToRegistration()" class="login-button">Создать аккаунт</button>
+      <button type="submit" class="login-button">Войти</button>
+    </div>
+  </form>
+</div>

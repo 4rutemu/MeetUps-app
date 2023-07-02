@@ -1,14 +1,24 @@
-<form [formGroup]="editForm" (submit)="editUser()">
+<div class="container">
+  <form [formGroup]="editForm" (submit)="editUser()">
 
-  <label for="email">email</label>
-  <input type="email" id="email" formControlName="email" />
-  <br /><br />
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="Email"
+    />
 
-  <label for="fio">fio</label>
-  <input type="text" id="fio" formControlName="fio" />
-  <br /><br />
+    <input
+      type="text"
+      id="fio"
+      formControlName="fio"
+      placeholder="ФИО"
+    />
 
-  <button (click)="deleteUser()">удалить</button>
-  <button type="submit">отправить</button>
-  <button (click)="cancelEditing()">отменить</button>
-</form>
+    <div class="buttons-container">
+      <button (click)="deleteUser()" class="delete">Удалить</button>
+      <button (click)="cancelEditing()" class="cancel">Отменить</button>
+      <button type="submit" class="submit">Изменить</button>
+    </div>
+  </form>
+</div>

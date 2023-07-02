@@ -13,7 +13,7 @@ export class CreateMeetupComponent implements OnInit{
     name: FormControl<string | null>;
     description: FormControl<string | null>;
     time: FormControl<string | null>;
-    duration: FormControl<number | null>;
+    duration: FormControl<string | null>;
     location: FormControl<string | null>;
     targetAudience: FormControl<string | null>;
     needToNow: FormControl<string | null>;
@@ -31,7 +31,7 @@ export class CreateMeetupComponent implements OnInit{
       name:['', [Validators.required]],
       description:[''],
       time:['', [Validators.required]],
-      duration:[90, [Validators.required]],
+      duration:['', [Validators.required]],
       location:['', [Validators.required]],
       targetAudience:[''],
       needToNow:[''],
@@ -46,7 +46,7 @@ export class CreateMeetupComponent implements OnInit{
       "name": this.createForm.value.name,
       "description": this.createForm.value.description,
       "time": this.createForm.value.time,
-      "duration": this.createForm.value.duration,
+      "duration": Number(this.createForm.value.duration),
       "location": this.createForm.value.location,
       "target_audience": this.createForm.value.targetAudience,
       "need_to_know": this.createForm.value.needToNow,

@@ -1,3 +1,38 @@
-<h2>{{meetup?.name}}</h2>
-<p>{{meetup?.description}}</p>
-<button (click)="meetupService.editCard(meetup)">edit</button>
+<div class="container">
+  <div class="description">
+    <div class="header">
+      <h2>{{meetup?.name}}</h2>
+      <p>{{meetup?.users?.length}} подписчиков</p>
+    </div>
+
+    <div class="information">
+      <p>{{meetup?.description}}</p>
+
+      <div *ngIf="meetup?.target_audience">
+        <h3>Целевая аудитория</h3>
+        <p>{{meetup?.target_audience}}</p>
+      </div>
+
+      <div *ngIf="meetup?.need_to_know">
+        <h3>Что надо знать?</h3>
+        <p>{{meetup?.need_to_know}}</p>
+      </div>
+
+      <div *ngIf="meetup?.will_happen">
+        <h3>Что будет?</h3>
+        <p>{{meetup?.will_happen}}</p>
+      </div>
+
+      <div *ngIf="meetup?.reason_to_come">
+        <h3>Почему надо обязательно прийти?</h3>
+        <p>{{meetup?.reason_to_come}}</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="time-place">
+    <h3>{{meetup?.time | date: 'hh:mm'}}</h3>
+    <p>{{meetup?.location}}</p>
+  </aside>
+
+</div>

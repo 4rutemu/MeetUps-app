@@ -1,3 +1,12 @@
-<div *ngFor="let meetup of meetups | async">
-  <app-meetup-card [meetup] = "meetup"></app-meetup-card>
+<div class="container">
+  <div *ngFor="let meetup of meetups | async" class="card-container">
+    <app-meetup-card [meetup] = "meetup"></app-meetup-card>
+    <button (click)="meetupService.editCard(meetup)">edit</button>
+  </div>
+
+
 </div>
+
+<button *ngIf="authService.user" (click)="routes.navigate(['create-meetup'])">
+  Создать митап
+</button>
