@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import { MeetupBoardComponent } from './components/meetup-board/meetup-board.component';
 import { MeetupCardComponent } from './components/meetup-card/meetup-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -35,7 +35,8 @@ import {RouterModule} from "@angular/router";
   providers: [
     MeetupService,
     HttpService,
-    MeetupFilterPipe
+    MeetupFilterPipe,
+    DatePipe
   ]
 })
 export class MeetupBoardModule { }

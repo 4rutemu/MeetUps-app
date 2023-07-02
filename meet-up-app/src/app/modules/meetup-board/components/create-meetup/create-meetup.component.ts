@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpService, URLS} from "../../../../services/http.service";
 import {Router} from "@angular/router";
+import {timestamp} from "rxjs";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-create-meetup',
@@ -23,7 +25,8 @@ export class CreateMeetupComponent implements OnInit{
 
   constructor(private fb: FormBuilder,
               private httpService: HttpService,
-              private routes: Router) {
+              private routes: Router,
+              private datePipe: DatePipe) {
   }
 
   ngOnInit() {

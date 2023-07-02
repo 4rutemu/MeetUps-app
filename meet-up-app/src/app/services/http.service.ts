@@ -22,26 +22,26 @@ export class HttpService {
   }
 
   postData(destination: string, body: object) {
-    this.http.post(`${BASE_URL}${destination}`, body)
+    this.http.post(`${BASE_URL}${destination}`, body).subscribe()
   }
 
   putData(destination: string, body: object) {
-    this.http.put(`${BASE_URL}${destination}`, body)
+    this.http.put(`${BASE_URL}${destination}`, body).subscribe()
   }
 
   putDataWithId(destination: string, body: object, id: number) {
-    this.http.put(`${BASE_URL}${destination}/${id}`, body)
+    this.http.put(`${BASE_URL}${destination}/${id}`, body).subscribe()
   }
 
   deleteData(destination: string){
-    this.http.delete(`${BASE_URL}${destination}`)
+    this.http.delete(`${BASE_URL}${destination}`).subscribe()
   }
 
   deleteDataWithBody(destination: string, body: object){
-    this.http.delete(`${BASE_URL}${destination}`, body)
+    this.http.delete(`${BASE_URL}${destination}`, body).subscribe()
   }
 
   deleteDataWithPath(destination: string, path: string){
-    this.http.delete(`${BASE_URL}${destination}/${path}`)
+    this.http.delete(`${BASE_URL}${destination}/${path}`).subscribe()
   }
 }
