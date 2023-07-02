@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService, URLS} from "../../../../services/http.service";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-users-list',
@@ -13,6 +14,6 @@ export class UsersListComponent implements OnInit{
   }
 
   ngOnInit() {
-    setTimeout(() => this.users = this.httpService.getData(URLS.USER), 700)
+    setTimeout(() => this.users = this.httpService.getData(URLS.USER).pipe(tap(console.log)), 700)
   }
 }

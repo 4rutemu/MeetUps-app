@@ -15,7 +15,7 @@ export class AuthService {
 
   register(email: any, password: any, fio: any) {
     this.http
-      .post(`${this.baseUrl}/registration`, {email, password, fio});
+      .post(`${this.baseUrl}/registration`, {email, password, fio}).subscribe();
     this.routes.navigate(['login']);
   }
 

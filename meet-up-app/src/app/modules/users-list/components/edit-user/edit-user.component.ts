@@ -31,7 +31,7 @@ export class EditUserComponent implements OnInit{
   }
 
   editUser() {
-    this.httpService.putDataWithId(URLS.MEETUP,
+    this.httpService.putDataWithId(URLS.USER,
       {
         "email": this.editForm.value.email,
         "password": this.editForm.value.password,
@@ -42,7 +42,7 @@ export class EditUserComponent implements OnInit{
   }
 
   deleteUser() {
-    this.httpService.deleteDataWithPath(URLS.MEETUP, this.userService.editingUser.id)
+    this.httpService.deleteDataWithPath(URLS.USER, this.userService.editingUser.id)
     this.routes.navigate(['users-list'])
   }
 

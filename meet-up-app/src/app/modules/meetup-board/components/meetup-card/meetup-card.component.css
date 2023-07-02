@@ -51,7 +51,7 @@
   margin-left: 15px;
 }
 
-.information p {
+.information > p {
   margin-left: 15px;
 }
 
@@ -76,6 +76,15 @@
   font-weight: 400;
   line-height: normal;
   color: #E9E9E9;
+}
+
+.owner {
+  display: flex;
+  flex-direction: row;
+}
+
+.owner > p {
+  margin-left: 10px;
 }
 
 
