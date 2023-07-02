@@ -1,0 +1,75 @@
+<div class="container">
+  <h2>Создание митапа</h2>
+
+  <form [formGroup]="createForm" (submit)="createMeetup()">
+
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="Название"
+    />
+
+    <input
+      type="text"
+      id="time"
+      formControlName="time"
+      placeholder="Время"
+    />
+
+    <input
+      type="number"
+      id="duration"
+      formControlName="duration"
+      placeholder="Продолжительность"
+    />
+
+    <input
+      type="text"
+      id="location"
+      formControlName="location"
+      placeholder="Место"
+    />
+
+    <input
+      type="text"
+      id="description"
+      formControlName="description"
+      placeholder="Описание"
+    />
+
+    <input
+      type="text"
+      id="targetAudience"
+      formControlName="targetAudience"
+      placeholder="Целевая аудитория"
+    />
+
+    <input
+      type="text"
+      id="needToNow"
+      formControlName="needToNow"
+      placeholder="Нужно знать"
+    />
+
+    <input
+      type="text"
+      id="willHappen"
+      formControlName="willHappen"
+      placeholder="Что будет?"
+    />
+
+    <input
+      type="text"
+      id="reasonToCome"
+      formControlName="reasonToCome"
+      placeholder="Причина прийти"
+    />
+
+    <div class="buttons-container">
+      <button (click)="cancelCreating()" class="cancel">Отменить</button>
+      <button type="submit" class="submit">Создать</button>
+
+    </div>
+  </form>
+</div>

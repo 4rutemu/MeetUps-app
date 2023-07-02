@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 15px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 80%;
+  border: 0.3px solid #B4B4C0;
+  border-radius: 3px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #E9E9E9;
+}
+
+.info-container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40%;
+  border-right: 0.3px solid #B4B4C0;
+}
+
+.info-container > div:last-of-type {
+  border: 0;
+}
+
+img {
+  width: 30px;
+  height: 33px;
+}

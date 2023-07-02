@@ -1,3 +1,23 @@
-<input type="email" [(ngModel)]="email">
-<input type="password" [(ngModel)]="password">
-<button (click)="this.login()">Войти</button>
+<div class="container">
+  <form [formGroup]="loginForm" (submit)="login()">
+
+    <input class="login-input"
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="email"
+    />
+
+    <input class="login-input"
+      type="password"
+      id="password"
+      formControlName="password"
+      placeholder="password"
+    />
+
+    <div class="login-button-container">
+      <button (click)="redirectToRegistration()" class="login-button">Создать аккаунт</button>
+      <button type="submit" class="login-button">Войти</button>
+    </div>
+  </form>
+</div>

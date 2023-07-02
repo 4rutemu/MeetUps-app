@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MeetupService} from "../../services/meetup.service";
+import {MeetupService} from "../../../../services/meetup.service";
 import {tap} from "rxjs";
-import {HttpService, URLS} from "../../services/http.service";
+import {HttpService, URLS} from "../../../../services/http.service";
 
 @Component({
   selector: 'app-meetup-board',
@@ -11,12 +11,13 @@ import {HttpService, URLS} from "../../services/http.service";
 export class MeetupBoardComponent implements OnInit{
 
   meetups: any;
+  searchText!: string;
 
   constructor(public meetupService: MeetupService, private httpService: HttpService) {
 
   }
 
   ngOnInit() {
-    this.meetups = this.httpService.getData(URLS.MEETUP)
+    setTimeout(() => this.meetups = this.httpService.getData(URLS.MEETUP), 700)
   }
 }

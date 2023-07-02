@@ -1,0 +1,29 @@
+<div class="container">
+  <form [formGroup]="registrationForm" (submit)="register()">
+    <input class="login-input"
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="email"
+    />
+
+    <input class="login-input"
+      type="password"
+      id="password"
+      formControlName="password"
+      placeholder="password"
+    />
+
+    <input class="login-input"
+      type="text"
+      id="fio"
+      formControlName="fio"
+      placeholder="fio"
+    />
+
+    <div class="login-button-container">
+      <button (click)="redirectToLogin()" class="login-button">Войти</button>
+      <button type="submit" class="login-button">Создать</button>
+    </div>
+  </form>
+</div>

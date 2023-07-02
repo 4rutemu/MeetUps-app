@@ -1,0 +1,24 @@
+<div class="container">
+  <form [formGroup]="editForm" (submit)="editUser()">
+
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="Email"
+    />
+
+    <input
+      type="text"
+      id="fio"
+      formControlName="fio"
+      placeholder="ФИО"
+    />
+
+    <div class="buttons-container">
+      <button (click)="deleteUser()" class="delete">Удалить</button>
+      <button (click)="cancelEditing()" class="cancel">Отменить</button>
+      <button type="submit" class="submit">Изменить</button>
+    </div>
+  </form>
+</div>
