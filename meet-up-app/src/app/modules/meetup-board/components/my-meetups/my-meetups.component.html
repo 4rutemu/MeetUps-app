@@ -1,12 +1,14 @@
 <div class="container">
   <div *ngFor="let meetup of meetups | async" class="card-container">
-    <app-meetup-card [meetup] = "meetup"></app-meetup-card>
-    <button (click)="meetupService.editCard(meetup)">edit</button>
+    <app-meetup-card [meetup] = "meetup" *ngIf="meetup.owner.id === authService.user.id"></app-meetup-card>
+    <div class="buttons-container">
+      <button *ngIf="meetup.owner.id === authService.user.id" (click)="meetupService.editCard(meetup)">Edit</button>
+    </div>
   </div>
 
 
 </div>
 
-<button *ngIf="authService.user" (click)="routes.navigate(['create-meetup'])">
+<button *ngIf="authService.user" (click)="routes.navigate(['create-meetup'])" class="create">
   Создать митап
 </button>

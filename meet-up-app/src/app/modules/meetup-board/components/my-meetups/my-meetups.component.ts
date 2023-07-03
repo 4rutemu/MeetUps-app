@@ -23,7 +23,6 @@ export class MyMeetupsComponent implements OnInit{
   }
 
   ngOnInit() {
-    setTimeout(() => this.meetups = this.httpService.getData(URLS.MEETUP)
-      .pipe(filter((meetup: IMeetup) => meetup.owner.id === this.authService.user.id)), 700)
+    setTimeout(() => this.meetups = this.httpService.getData(URLS.MEETUP), 700)
   }
 }

@@ -65,6 +65,6 @@ export class EditMeetupComponent {
   }
 
   cancelEditing() {
-    this.routes.navigate(['meetups'])
+    this.routes.navigate(['my-meetups'])
   }
 }
