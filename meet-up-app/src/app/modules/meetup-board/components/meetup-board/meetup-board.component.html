@@ -8,5 +8,15 @@
 
   <div *ngFor="let meetup of meetups | async | meetupsFilter: searchText">
     <app-meetup-card [meetup] = "meetup"></app-meetup-card>
+    <div class="buttons-container">
+      <button class="subscribe"
+        *ngIf="!meetupService.isSubscribed(meetup)"
+        (click)="meetupService.toggleSubscribeOnMeetup(meetup)"
+      >Я пойду!</button>
+      <button class="unsubscribe"
+        *ngIf="meetupService.isSubscribed(meetup)"
+        (click)="meetupService.toggleSubscribeOnMeetup(meetup)"
+      >Не пойду...</button>
+    </div>
   </div>
 </div>
