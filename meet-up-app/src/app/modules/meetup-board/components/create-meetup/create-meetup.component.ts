@@ -61,6 +61,6 @@ export class CreateMeetupComponent implements OnInit{
   }
 
   cancelCreating() {
-    this.routes.navigate(['meetups'])
+    this.routes.navigate(['my-meetups'])
   }
 }
